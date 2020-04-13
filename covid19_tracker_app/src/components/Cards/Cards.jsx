@@ -6,7 +6,6 @@ import cx from "classnames";
 import styles from "./Cards.module.css";
 
 const Cards = (props) => {
-  console.log(props.data);
   if (
     !props.data.confirmed ||
     !props.data.recovered ||

@@ -9,6 +9,7 @@ import styles from "./App.module.css";
 
 const App = () => {
   const [data, setData] = useState({});
+  const [country, setCountry] = useState("");
 
   const fetchTrackerData = async () => {
     const data = await fetchData();
@@ -20,11 +21,17 @@ const App = () => {
     fetchTrackerData();
   }, []);
 
+  const handleCountryChange = async (country) => {
+    const data = await fetchData(country);
+    setData(data);
+    setCountry(country);
+  };
+
   return (
     <div className={styles.container}>
       <Cards data={data} />
-      <CountryPicker />
-      <Chart />
+      <CountryPicker handleCountryChange={handleCountryChange} />
+      <Chart data={data} country={country} />
     </div>
   );
 };
