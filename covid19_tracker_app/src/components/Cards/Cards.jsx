@@ -31,7 +31,7 @@ const Cards = (props) => {
             <Typography color="textSecondary" gutterBottom>
               Infected
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="h3">
               <CountUp
                 start={0}
                 end={confirmed.value}
@@ -59,7 +59,7 @@ const Cards = (props) => {
             <Typography color="textSecondary" gutterBottom>
               Recovered
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="h3">
               <CountUp
                 start={0}
                 end={recovered.value}
@@ -87,7 +87,7 @@ const Cards = (props) => {
             <Typography color="textSecondary" gutterBottom>
               Deaths
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="h3">
               <CountUp
                 start={0}
                 end={deaths.value}

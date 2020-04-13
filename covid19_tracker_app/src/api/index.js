@@ -15,5 +15,23 @@ export const fetchData = async () => {
       lastUpdate,
     };
     return modifiedData;
-  } catch (error) {}
+  } catch (error) {
+    console.log("Something went wrong while fetching data");
+  }
+};
+
+export const fetchDailyData = async () => {
+  try {
+    const { data } = await axios.get(`${URL}/daily`);
+
+    const modifiedData = data.map((dailyData) => ({
+      confirmed: dailyData.confirmed.total,
+      deaths: dailyData.deaths.total,
+      date: dailyData.reportDate,
+    }));
+
+    return modifiedData;
+  } catch (error) {
+    console.log("Something went wrong while fetching data");
+  }
 };
